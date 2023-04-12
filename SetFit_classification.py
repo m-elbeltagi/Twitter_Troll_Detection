@@ -10,7 +10,7 @@ import sys
 
 
 
-save_path = r'C:\Users\M\OneDrive - Carleton University\Documents\my_stuff\Projects\russian_troll_tweets'
+save_path = r'.\Twitter_Troll_Detection'
 writer = SummaryWriter(r'runs/setfit')
 
 ## setting device
@@ -26,8 +26,8 @@ n_epochs = 1
 num_labels = 2
 
 ## using 'engine = python' for the second file because it's large and runs into error without it
-raw_troll_data = pd.read_csv(r'C:\Users\M\OneDrive - Carleton University\Documents\my_stuff\Projects\russian_troll_tweets\russian_troll_tweets_200k_dataset.csv')
-raw_nontroll_data = pd.read_csv(r'C:\Users\M\OneDrive - Carleton University\Documents\my_stuff\Projects\russian_troll_tweets\non_troll_candidate_dataset.csv', engine='python')
+raw_troll_data = pd.read_csv(r'.\russian_troll_tweets_200k_dataset.csv')
+raw_nontroll_data = pd.read_csv(r'.\non_troll_candidate_dataset.csv', engine='python')
 
 
 ## double square brackets to put in a dataframe instead of single to put in series
@@ -97,7 +97,7 @@ print (metrics)
 
 
 def test_accuracy():
-    raw_nontroll_data = pd.read_csv(r'C:\Users\M\OneDrive - Carleton University\Documents\my_stuff\Projects\russian_troll_tweets\non_troll_candidate_dataset.csv', engine='python')
+    raw_nontroll_data = pd.read_csv(r'.\non_troll_candidate_dataset.csv', engine='python')
 
     raw_nontroll_data = raw_nontroll_data[['tweet', 'country']]
 
