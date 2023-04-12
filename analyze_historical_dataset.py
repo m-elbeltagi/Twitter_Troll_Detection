@@ -25,8 +25,8 @@ print('Device in use: {} \n'.format(device))
 batch_size = 1000
 num_labels = 2
 
-save_path = r'C:\Users\M\OneDrive - Carleton University\Documents\my_stuff\Projects\russian_troll_tweets'
-data_path = r'C:\Users\M\OneDrive - Carleton University\Documents\my_stuff\Projects\russian_troll_tweets\cov19_tweets\COVID.csv'
+save_path = r'.\Twitter_Troll_Detection'
+data_path = r'.\cov19_tweets\COVID.csv'
 
 cov19_data = pd.read_csv(data_path)
 cov19_data = cov19_data[['Tweet Posted Time (UTC)', 'Tweet Content', 'Tweet Language']]
