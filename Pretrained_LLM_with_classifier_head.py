@@ -20,7 +20,7 @@ import sys
 
 
 
-save_path = r'C:\Users\M\OneDrive - Carleton University\Documents\my_stuff\Projects\russian_troll_tweets'
+save_path = r'.\Twitter_Troll_Detection'
 
 
 ## setting device
@@ -37,8 +37,8 @@ learning_rate = 0.00001
 beta1 = 0.5         
 
 ## using 'engine = python' for the second file because it's large and runs into error without it
-raw_troll_data = pd.read_csv(r'C:\Users\M\OneDrive - Carleton University\Documents\my_stuff\Projects\russian_troll_tweets\russian_troll_tweets_200k_dataset.csv')
-raw_nontroll_data = pd.read_csv(r'C:\Users\M\OneDrive - Carleton University\Documents\my_stuff\Projects\russian_troll_tweets\non_troll_candidate_dataset.csv', engine='python')
+raw_troll_data = pd.read_csv(r'.\russian_troll_tweets_200k_dataset.csv')
+raw_nontroll_data = pd.read_csv(r'.\non_troll_candidate_dataset.csv', engine='python')
 
 
 ## double square brackets to put in a dataframe instead of single to put in series
@@ -68,11 +68,11 @@ def plot_texts_lengths(train_dataset):
     train_dataset = Dataset.from_pandas(train_dataset)                      
     train_dataset.set_format(type='pandas')                                 
     train_dataframe = train_dataset[:]
-    train_dataframe['words per text (per category)'] = train_dataframe['text'].str.split().apply(len)
-    train_dataframe.boxplot('words per text (per category)', by='target', grid=False, showfliers=False, color='black')
+    train_dataframe['Words per Text (per Class)'] = train_dataframe['text'].str.split().apply(len)
+    train_dataframe.boxplot('Words per Text (per Class)', by='target', grid=False, showfliers=False, color='black')
     plt.suptitle("")
-    plt.xlabel("")
-    plt.show()
+    plt.xlabel("Class (0: Non-Troll. 1:Troll)")
+    plt.savefig(save_path + '/text_lengths.png', bbox_inches='tight', dpi=1000)
 
 
 ## note that the tokenizer used needs to match the one used for the imported pretrained model (when using hugging face pipeline it takes care of this step)
