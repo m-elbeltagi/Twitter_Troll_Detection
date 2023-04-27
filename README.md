@@ -4,6 +4,6 @@ A full report on the project is currently being written, and will be posted when
 Poster has been posted, see below for a brief overview of the project.  
 
   
-The ***poster won 3rd place at the Carleton Data Day 9.0 poster competition***.
+***The poster won 3rd place at the Carleton Data Day 9.0 poster competition***.
 
 ![Screenshot](project_poster.png "Project Poster")
